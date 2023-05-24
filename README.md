@@ -1,18 +1,16 @@
 ![image](https://user-images.githubusercontent.com/109401839/230745596-57cee9bd-687c-427d-b0db-d1080df77f7e.png)
 
-# Azure Preparation
+# Azure Setup
 
-### We will create our Subscription and Resources, then go over Failed Authentication and Log Observation, and finally
-Azure Active Directory Overview (Users, Groups, and Access Management)
+## Objectives 
+We will commence by establishing our Subscription and Resources, followed by examining Failed Authentication and Log Observation, and concluding with an overview of Azure Active Directory encompassing Users, Groups, and Access Management.
 
-#### Environments and Technologies Used 
-
+## Environments and Technologies Used 
 - Microsoft Azure
 - SQL Server
 - Event Viewer
 
-### Operating Systems Used
-
+## Operating Systems Used
 - VM Windows 10 PRO (21H2)
 
 ## Resources & SQL Server Vulnerabilties
@@ -23,33 +21,44 @@ Azure Active Directory Overview (Users, Groups, and Access Management)
 
 </summary>
 
-#### Actions and Observations<b>
+## Actions and Observations<b>
 
 - Create Windows 10 Pro Virtual Machine
 - Name the Resource Group: RG-Cyber-Lab
 
-![gtxtw3z5](https://user-images.githubusercontent.com/109401839/230747447-40c9b360-38e2-4d8d-b4b2-7ea0bb12ae0f.png)
+<p align="center">
+<img src="https://i.imgur.com/erJwUnm.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Name the Virtual Network. NAME IT “Lab-VNet”
+- Name the Virtual Network: Lab-VNet
 
-![hjl0rzkf](https://user-images.githubusercontent.com/109401839/230747449-be2118b3-a451-4d32-a756-d4082055ae31.png)
+<p align="center">
+<img src="https://i.imgur.com/5aszFsx.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Now, double-check the VM settings and create! 
+- Now, verify the VM configurations and proceed with the creation! 
 
-![image](https://user-images.githubusercontent.com/109401839/230747537-211a32a7-9525-4572-a455-0a250278c604.png)
+<p align="center">
+<img src="https://i.imgur.com/IFE9TaZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Configure Network Security Group (Layer 4 Firewall) to allow all traffic inbound
+- Configure the Network Security Group (Layer 4 Firewall) to permit inbound traffic from all sources.
 
-- A mini firewall that will be configured for our virtual machine to allow all traffic in. We want to make this firewall look enticing to allow threat actors such as hackers, bots, and attackers to try to get into our virtual machine. 
+- By establishing a custom firewall configuration for the virtual machine, we are enabling unrestricted inbound traffic. The intention is to create an enticing environment that attracts potential threat actors, including hackers, bots, and attackers, to attempt unauthorized access to the virtual machine.
 
-- In resource groups, we will go inside it, and we can see all the things associated with the VM being created. 
-- We will edit, the network security group, either by search or in the resource groups. 
-- Based on the traffic coming into the network we can see the priority categorised in Azzure based on the set rules/protocols. 
-- Create Inbound Security Rule, Any, Name it "DangerAllInBound" 
+- Within the resource groups, navigate to access and examine all associated resources linked to the created virtual machine.
 
-![nsg danger inbound](https://user-images.githubusercontent.com/109401839/230748062-20cb8a7d-768c-4d8b-b548-dad98fdef095.png)
+- Proceed to modify the network security group either through search functionality or by accessing the resource groups.
 
-- Now try to ping the IP Address of the VM in CMD...
+- Evaluate the priority of incoming network traffic based on predefined rules and protocols, categorized within the Azure environment.
+
+- Create an inbound security rule with the designation "Dangerallowallinbound," allowing any type of inbound traffic. 
+
+<p align="center">
+<img src="https://i.imgur.com/0kuuxxA.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- Let's now attempt to ping the IP Address of the VM in CMD...
 - Did it work? 
 
 ![ping](https://i.imgur.com/ZnVQuDB.png)
