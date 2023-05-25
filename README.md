@@ -58,31 +58,36 @@ We will commence by establishing our Subscription and Resources, followed by exa
 <img src="https://i.imgur.com/0kuuxxA.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
 
-- Let's now attempt to ping the IP Address of the VM in CMD...
-- Did it work? 
+- Let us now proceed to initiate a ping command to the IP Address of the virtual machine within the Command Prompt and carefully observe the resulting outcome.
 
-![ping](https://i.imgur.com/ZnVQuDB.png)
+<p align="center">
+<img src="https://i.imgur.com/7q1xfgU.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- No it didn't because we need to remote in and change the firewall setting within the VM as well. 
+- You will observe that the ping operation is unsuccessful as we need to modify the firewall settings within the virtual machine itself to allow the necessary access. 
 
-- Remote Into the VM
+- Now remote into the Windows 10 VM by using Remote Desktop Connection 
 
-- Now remote in, on Windows 10 we will use  "Remote Desktop Connection" 
-
-![e](https://i.imgur.com/8RQ9xpu.png)
+<p align="center">
+<img src="https://i.imgur.com/H4BFSlS.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 - Turn off Windows Firewall
  
-- Once you are logged in, search "wf.msc" in the start menu to execute the program "Windows Defender Firewall Advanced Security.
+- After logging in, please utilize the start menu search function to locate and execute the program "Windows Defender Firewall Advanced Security" by searching for "wf.msc"
 - Click on "Windows Defender Firewall Properties" 
 - On each tab, turn off the "Firewall State" 
-- Ignore IPSEC Settings for now.
+- Ignore IPsec Settings for now.
 
-![3](https://i.imgur.com/pBzKoId.png)
+<p align="center">
+<img src="https://i.imgur.com/wvIk0aH.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 - Now observe the changes in CMD: 
 
-![image](https://user-images.githubusercontent.com/109401839/230748490-8588cf7e-e3b4-4739-befd-f4695ba665ce.png)
+<p align="center">
+<img src="https://i.imgur.com/B3APjv6.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 - Install SQL Server Evaluation
 
