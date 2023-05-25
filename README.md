@@ -118,7 +118,7 @@ We will commence by establishing our Subscription and Resources, followed by exa
  - Choose the "Mixed Mode" option, as it holds significance in enabling both online and local login capabilities to the SQL Server. This is crucial because, with Windows Authentication Mode alone, logging in is restricted to online accounts, while the mixed mode grants the flexibility to access the SQL Server through both online and local authentication methods.
 
 Default Username: ```sa```
-Password: ```Cyberlab123!```` (This is what I used, however you can set any password but need to document it.) 
+Password: ```Cyberlab123!``` (This is what I used, however you can set any password but need to document it.) 
 
 - Enter your password and add your current user 
 
