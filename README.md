@@ -126,15 +126,21 @@ Password: ```Cyberlab123!``` (This is what I used, however you can set any passw
 
 - Next, we will download [Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
 
-![image](https://user-images.githubusercontent.com/109401839/230749437-dfc8f934-0360-4bc8-949f-a99371c0ba40.png)
+ - Once downloaded, open SQL Server Management Studio and connect to server to enable logging
 
-![image](https://user-images.githubusercontent.com/109401839/230749591-15fffab9-3651-418b-8694-bd763492a9fb.png)
+ <p align="center">
+<img src="https://i.imgur.com/PwIREQm.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+ <p align="center">
+<img src="https://i.imgur.com/35zYIoL.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 [Configure](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log?view=sql-server-ver16) the audit object access setting in Windows using audit-pol
 
 - Enable logging for SQL Server to be ported into Windows Event Viewer 
 
-- Open a command prompt with administrative permissions.
+- Open Command Prompt with administrative permissions.
 
 - From the Start menu, navigate to Command Prompt, and then select Run as administrator.
 
@@ -150,27 +156,40 @@ Password: ```Cyberlab123!``` (This is what I used, however you can set any passw
 
 - Close the command prompt window.
 
-![2](https://i.imgur.com/LCjKjIg.png)
+ <p align="center">
+<img src="https://i.imgur.com/GjZ3dug.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Now RegEdit and explore:
+- Now open Registry Editor and explore:
 
  ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security```
 
-![image](https://user-images.githubusercontent.com/109401839/230749756-e9139c85-9cd7-4756-a400-307b02a4c81a.png)
+ - Right-click Security > select Permissions > Add > type "NETWORK SERVICE" > Check Names > OK > select Full Control > Apply > OK
+
+ <p align="center">
+<img src="https://i.imgur.com/bBAJbHR.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/tonrn2T.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 - Restart SQL Management, Disconnect Connection, Reconnect, and Choose SQL Managements Authentication Method. 
 
-- Now, Intentionally enter the wrong username and password to do a failed login attempt. 
+- Now, intentionally enter the wrong username and password to perform a failed login attempt. 
 
-![image](https://user-images.githubusercontent.com/109401839/230749821-c108d8bb-e77e-4826-9b93-0a6f2afde4f4.png)
+<p align="center">
+<img src="https://i.imgur.com/8YIVXcn.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Test SQL logging to make sure it’s working properly
+- Test SQL logging to make sure it’s working properly.
 
-- Enter Event Viewer, Select Application, and View SQL Management Logs Entries: 
+- Open Enter Event Viewer > Windows Logs > select Application > view SQL Management Logs Entries
 
-![image](https://user-images.githubusercontent.com/109401839/230749908-b20fe934-00b7-498a-a8f6-1f9554e38aed.png)
+<p align="center">
+<img src="https://i.imgur.com/dJYTuec.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Here we can see the failed login attempt and the reason. That concludes the first lab. 
+ - Here we can see the failed login attempt and the reason. With that, we bring the first lab to a conclusion. 
 
 ## Precursor to Security Operations (Failed Authentication and Log Observation)
 
