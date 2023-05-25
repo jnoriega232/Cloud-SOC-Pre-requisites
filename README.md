@@ -93,30 +93,36 @@ We will commence by establishing our Subscription and Resources, followed by exa
 
 - [Download here](https://www.microsoft.com/en-us/evalcenter/download-sql-server-2022)
 
-- Install .exe file, Download Media, ISO option, Open Folder, and Mount Media
+- Install .exe file > Download Media > ISO option > Open Folder > Mount Media
 
 - It will show as a disk file under the "This PC" side panel: 
 
-![image](https://user-images.githubusercontent.com/109401839/230748771-4fd4e778-626d-4baa-8403-b1acf1389bdb.png)
+- Select the application labeled "setup" to open "SQL Server Installation Center"
+ 
+<p align="center">
+<img src="https://i.imgur.com/lUi81uN.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/109401839/230748852-edba2194-ebb1-4e15-932f-243d6cce6fac.png)
+- Select Installation > New SQL Server standalone installation or add features to an existing installation > Specify a free edition: Evaluation > Accept licensing > select Database Engine Services > Default instance > Next > select Mixed Mode (SQL Server authentication and Windows authentication) > fill out password > Add Current User > Next > Install
+ 
+ <p align="center">
+<img src="https://i.imgur.com/IlIY8kt.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/bIsTOxn.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/kLS1yo3.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Install SSMS (SQL Server Management Studio)
-
-![sql install](https://user-images.githubusercontent.com/109401839/230748997-ad8f84d1-9bf7-4125-b7e5-0cd2f490b62b.png)
-
-![mstsc_Kc9i9HCW3n](https://user-images.githubusercontent.com/109401839/230749050-cdeedde3-6773-48a1-852b-415ea114cfc6.png)
-
-![mstsc_sGtz3qU3M2](https://user-images.githubusercontent.com/109401839/230749062-0bd9eaeb-9c0d-43c2-93a5-c9641bf2285e.png)
-
-- Select "Mixed Mode", this is important because, with Windows Authentication Mode, we will only be able to log in with an online account, whereas, with a mixed mode, we can log in online and locally into the SQL Server.
+ - Choose the "Mixed Mode" option, as it holds significance in enabling both online and local login capabilities to the SQL Server. This is crucial because, with Windows Authentication Mode alone, logging in is restricted to online accounts, while the mixed mode grants the flexibility to access the SQL Server through both online and local authentication methods.
 
 Default Username: ```sa```
-Password: ```LabTest12345```` (This is what we used, you can set any password but document it.) 
+Password: ```Cyberlab123!```` (This is what I used, however you can set any password but need to document it.) 
 
-- Add your current user, and enter your password. 
+- Enter your password and add your current user 
 
-- Now Finish Install! Now we can connect to our SQL Database.  
+- Once you finish installing, we can now connect to our SQL Database.  
 
 - Next, we will download [Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
 
