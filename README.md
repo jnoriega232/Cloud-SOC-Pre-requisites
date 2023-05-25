@@ -120,7 +120,7 @@ We will commence by establishing our Subscription and Resources, followed by exa
 Default Username: ```sa```
 Password: ```Cyberlab123!``` (This is what I used, however you can set any password but need to document it.) 
 
-- Enter your password and add your current user 
+- Enter your password and add your current user. 
 
 - Once you finish installing, we can now connect to our SQL Database.  
 
