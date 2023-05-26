@@ -210,7 +210,7 @@ To facilitate our investigation, we will establish a virtual machine (VM) in the
 <img src="https://i.imgur.com/TSsZ0bu.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
 
-``` We will name the VNet Lab-VNet-Attacker```
+```We will name the VNet Lab-VNet-Attacker```
 
 <p align="center">
 <img src="https://i.imgur.com/dSehf4i.png" height="70%" width="70%" alt="Azure Free Account"/> 
@@ -271,104 +271,118 @@ To facilitate our investigation, we will establish a virtual machine (VM) in the
 <b>Actions and Observations<b>
 
 - Configure and Observe Tenant-Level Global Reader
-1. Create a user in Active Directory, we will name the user "globalreaderjohn"
-Then we will select the auto password to generate the option, Maxo1396" 
-```It will be different for you``
-
-![image](https://user-images.githubusercontent.com/109401839/230799438-00d3e9fe-4348-4052-9995-6d6895f6f283.png)
-
-![image](https://user-images.githubusercontent.com/109401839/230799569-fca3562d-15c4-4332-9e30-0e75432e7e96.png)
-
+- Generate a user account in Active Directory with the username "globalreaderjohn" and utilize the auto-generated password feature, as we will reset the password upon logging in.
 - Assign Tenant-Level Global Reader
 
-![image](https://user-images.githubusercontent.com/109401839/230799619-da680846-c56a-479a-b215-ab5758f49b50.png)
+ <p align="center">
+<img src="https://i.imgur.com/oFG6ih0.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![msedge_Y3BrhP8v9T](https://user-images.githubusercontent.com/109401839/230799861-29ebd5fd-4b1d-445f-a9da-abfd1056a726.png)
+ <p align="center">
+<img src="https://i.imgur.com/CaxKf3q.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-Be sure to copy your user's "User Principal Name",  for us that is ```globalreaderjohn@fnabeelpm.onmicrosoft.com```
+ <p align="center">
+<img src="https://i.imgur.com/fo0VIsx.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
+- Be sure to make note of the "User Principal Name" for your user, which in my case is ```globalreaderjohn@jnoriega232gmail.onmicrosoft.com```.
 - In a new browser/incognito, log in as globalreaderjohn and observe the result of being a Tenant Level “Global Reader”
 
- [Login to Azure](http://portal.azure.com/) 
+ [Log into Azure](http://portal.azure.com/) 
 
-![msedge_HqzxFbf0iN](https://user-images.githubusercontent.com/109401839/230799958-e166ab3b-f43a-4ffc-9042-c836cf5c3ec2.png)
+ <p align="center">
+<img src="https://i.imgur.com/NW1mLSh.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
- Azure will prompt you to change your auto-generated password, for us we changed it to ```LabTest123456```, feel free to use anything but be sure to remember it. 
-
-Once you are logged into Azure, notice you can not see anything on your subscription page, however, you can view all available users. 
-
-Due to your role, as Global Reader. I can view users' overviews, however, I am not able to make changes or reset passwords. 
-
-![image](https://user-images.githubusercontent.com/109401839/230800090-ab7e025f-079f-41f5-a8f4-10cf7dbd5676.png)
-
-This is because we have given RBAC (Role-Based Access Control) and enforced the Least Privileges so John can only do his job, Read. 
-
+- Once in Azure, you will be prompted to change the automatically generated password. Please feel free to set a password of your choice, but make sure to remember it.
+- Upon logging into Azure, you may observe that the subscription page appears empty, but please note that you will be able to view all the available users. 
+- As a Global Reader, your role grants you access to view users' overviews but does not allow you to make changes or reset passwords.
+- This is because we have implemented Role-Based Access Control (RBAC) and enforced the principle of Least Privilege. As a result, John's role as Global Reader only grants him the necessary privileges to perform his job function, which is limited to reading information and not making any changes or resetting passwords.
 - Close browser/incognito when satisfied
 
+ <p align="center">
+<img src="https://i.imgur.com/obQ8CHq.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
 - Back in the main browser, create another user within AAD  (username: subreaderjane)
-
-- Configure and Observer Subscription Reader
-
-- Auto-generated password, ```Qudo6437```  
-
-![msedge_JftbufmM3X](https://user-images.githubusercontent.com/109401839/230800294-58e9a6f0-984e-435a-8db1-41a5cbbd8523.png)
-
 - Assign Subscription-Level Reader 
+- Configure and Observe Subscription Reader
 
-This may be called something different for you, for me ``` Azure subscription 1``` and you can find this under ```Subscriptions```. 
+ <p align="center">
+<img src="https://i.imgur.com/Z6J0Lou.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+ 
+- Next, navigate to your specific subscription, which in this case is labeled as ```Azure subscription 1```. You can locate this option under the ```Subscriptions``` section.
+- Now, enter the Access Control (IAM) and give Jane the appropriate role. 
 
-Now, Enter the Access Control (IAM) and give Jane the deserved role. 
-
-![image](https://user-images.githubusercontent.com/109401839/230800962-a70cbdaf-c686-41ec-9313-f8dc9cb0fd9e.png)
-
-![msedge_UUzHPizmTA](https://user-images.githubusercontent.com/109401839/230800551-c809f8b7-975f-4a3b-8761-ef7e7c6fe5fb.png)
+ <p align="center">
+<img src="https://i.imgur.com/yTUKa1J.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+ <p align="center">
+<img src="https://i.imgur.com/kZlOMaZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 - In a new browser/incognito, log in as subreaderjane and observe the result of being a Subscription Level “Global Reader”
 
-Again, you will be prompted to change your password and document it. 
+ <p align="center">
+<img src="https://i.imgur.com/B9i8Sep.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-Go to resource groups and notice you can see the resources in there and even under subscriptions. 
-
-Let us try to delete a resource group now, we should not be able to do so... 
-
-![image](https://user-images.githubusercontent.com/109401839/230801715-c9537447-9f66-4f22-8d33-19eab3074bd2.png)
-
-Did it delete? YIKES.
-
-![image](https://user-images.githubusercontent.com/109401839/230801752-80f0c485-cf6b-40d5-ac6d-de5b9cedf301.png)
-
-It did not delete! Jane does not have the privileges to create or delete. Only a subscription-level reader. We can not change anything. 
-
+- Again, you will be prompted to change your password and document it. 
+- After logging in, proceed to the "Resource Groups" section, where you will be able to view the resources contained within. Additionally, you will also be able to explore the resources categorized under your subscriptions. 
+- Now, let's attempt to delete a resource group. However, please note that we should not be able to do so due to the access restrictions in place.
+- The deletion attempt was unsuccessful. Jane does not possess the necessary privileges to create or delete resource groups. She is restricted to being a subscription-level reader, which means she cannot make any changes to the resources or settings.
 - Close browser/incognito when satisfied
 
-- Configure and Observe Resource Group Contributor (like an admin)
+  <p align="center">
+<img src="https://i.imgur.com/bD18Mf1.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+ <p align="center">
+<img src="https://i.imgur.com/d6yMo7X.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
+- Next, let's configure and observe the role of Resource Group Contributor, which functions similarly to an administrative role.
 - Back in the main browser, create another user within AAD  (username: rgcontributordave)
 
-Auto-generated password ```Fayo1701```
+ <p align="center">
+<img src="https://i.imgur.com/UV0YOIa.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Create a new resource group called “Permissions-Tester”
-
+- We will create a new resource group called “Permissions-Tester”
 - Assign Resource Group-level Contributor
+- In our resource group (Permissions-Tester), enter Access Control (IAM) and assign Contributor permissions to rgcontributordave
+- Find "Contributor" role under "Privileged administrator roles"
 
-- For our resource group (RG-Cyber-Lab), assign Contributor Permissions
+ <p align="center">
+<img src="https://i.imgur.com/SlF9rdC.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+ <p align="center">
+<img src="https://i.imgur.com/TwX42sW.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+ <p align="center">
+<img src="https://i.imgur.com/XR8z5QS.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/109401839/230802793-5cd508ee-80f4-4ec5-a550-a9bcfee016b6.png)
+- In a new browser or incognito window, log in as "rgcontributordave" and observe the outcome of having a Subscription Level Reader role. 
 
-- In a new browser/incognito, log in as rgcontributordave and observe the result of being a Subscription Level Reader
- 
-![msedge_0h9H4b5cvQ](https://user-images.githubusercontent.com/109401839/230802957-c2564141-5e21-4f06-8566-70b1464c40ce.png)
+ <p align="center">
+<img src="https://i.imgur.com/d7ecDoP.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Observe the result of being a Resource Group Level Contributor
+- Take a moment to observe the outcome of having the role of Resource Group Level Contributor.
+- Now, Dave has the capability to view the resource group and create additional resources within it, such as Storage.
+- In "Permissions-Tester", we will create a storage account called "observecapability" for observation.
 
-![image](https://user-images.githubusercontent.com/109401839/230803072-730eeeb8-3051-4173-9a19-44d513cddb56.png)
+ <p align="center">
+<img src="https://i.imgur.com/o1mRjjq.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+ <p align="center">
+<img src="https://i.imgur.com/eP0XlWB.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p> 
 
-Dave is now able to view the resource group and create further resources in the group such as Storage. 
- 
- ![image](https://user-images.githubusercontent.com/109401839/230803808-2d32b1ba-4312-4cc9-99a3-26d158587e0f.png)
+```Be sure  NOT to delete your resources``` we will continue with the same RG & VMs. 
 
-```Be sure  NOT to delete your resources``` we will continue with the same RG & VM. 
-
-That concludes the three-part labs series, *Welcome to Cybersecurity*, your journey starts here! 
+Congratulations on completing the three-part lab series, "Welcome to Cybersecurity"! This marks the beginning of your exciting journey in the field of cybersecurity. 
 
 On our next set of [labs](https://github.com/fnabeel/Logging-and-Monitoring), we will go over Logging and Monitoring. 
