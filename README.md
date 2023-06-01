@@ -385,4 +385,4 @@ To facilitate our investigation, we will establish a virtual machine (VM) in the
 
 Congratulations on completing the three-part lab series, "Welcome to Cybersecurity"! This marks the beginning of your exciting journey in the field of cybersecurity. 
 
-On our next set of [labs](https://github.com/fnabeel/Logging-and-Monitoring), we will go over Logging and Monitoring. 
+On our next set of [labs](https://github.com/jnoriega232/Logging-and-Monitoring), we will go over Logging and Monitoring. 
